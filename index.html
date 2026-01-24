@@ -545,8 +545,36 @@
         };
 
         function syncAudioText(audioId, textId) {
-            const audio = document.getElementById(audioId);
-            const text = document.getElementById(textId);
+    const audio = document.getElementById(audioId);
+    const text = document.getElementById(textId);
+    
+    if (!audio || !text) return;
+    
+    audio.addEventListener('timeupdate', () => {
+        if (audio.duration && audio.duration > 0) {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            const scrollHeight = text.scrollHeight - text.clientHeight;
+            
+            if (scrollHeight > 0) {
+                const targetScroll = (scrollHeight * progress) / 100;
+                text.scrollTop = targetScroll;
+            }
+        }
+    }, false);
+
+    audio.addEventListener('play', () => {
+        document.querySelectorAll('audio').forEach(a => {
+            if (a.id !== audioId) {
+                a.pause();
+                a.currentTime = 0;
+            }
+        });
+    }, false);
+    
+    audio.addEventListener('ended', () => {
+        text.scrollTop = 0;
+    }, false);
+}
             
             if (!audio || !text) return;
             
