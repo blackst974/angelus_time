@@ -48,7 +48,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('Mary.jpg');
             background-size: cover;
             background-position: center;
             opacity: 0.15;
@@ -388,7 +387,7 @@
 </head>
 <body>
     <div class="phone-frame">
-        <div class="bg-image"></div>
+        <div class="bg-image" id="bgImage"></div>
 
         <header class="header">
             <h1>✨ Angélus Time</h1>
@@ -500,6 +499,24 @@
     </div>
 
     <script>
+        // Charger l'image Mary.jpg et la convertir en data URL
+        async function loadBackgroundImage() {
+            try {
+                const response = await fetch('Mary.jpg');
+                const blob = await response.blob();
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const bgImage = document.getElementById('bgImage');
+                    bgImage.style.backgroundImage = `url(${e.target.result})`;
+                };
+                reader.readAsDataURL(blob);
+            } catch (error) {
+                console.log('Image non trouvée, utilisation du dégradé par défaut');
+                const bgImage = document.getElementById('bgImage');
+                bgImage.style.background = 'linear-gradient(135deg, rgba(30, 58, 138, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%)';
+            }
+        }
+
         let deferredPrompt;
 
         // PWA Installation Handler
@@ -646,6 +663,7 @@
             loadState();
             showNotificationStatus('matin');
             checkNotificationsTime();
+            loadBackgroundImage();
             
             syncAudioText('audio-matin', 'text-matin');
             syncAudioText('audio-angelus', 'text-angelus');
