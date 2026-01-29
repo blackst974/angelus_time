@@ -1,0 +1,76 @@
+{
+  "name": "Angélus Time",
+  "short_name": "Angélus",
+  "description": "Application de prière mobile avec rappels et audio",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#1e3a8a",
+  "categories": ["lifestyle", "productivity"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231e3a8a' width='192' height='192' rx='45'/><text x='50%' y='55%' font-size='100' font-family='Arial' fill='white' text-anchor='middle' dominant-baseline='middle'>🙏</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231e3a8a' width='192' height='192' rx='45'/><text x='50%' y='55%' font-size='100' font-family='Arial' fill='white' text-anchor='middle' dominant-baseline='middle'>🙏</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%231e3a8a' width='540' height='720'/><text x='270' y='360' font-size='100' font-family='Arial' fill='white' text-anchor='middle' dominant-baseline='middle'>🙏</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Prière du Matin",
+      "short_name": "Matin",
+      "description": "Accéder à la prière du matin",
+      "url": "/?section=matin",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231e3a8a' width='192' height='192' rx='45'/><text x='50%' y='55%' font-size='80' font-family='Arial' fill='white' text-anchor='middle' dominant-baseline='middle'>☀️</text></svg>",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Angélus",
+      "short_name": "Angélus",
+      "description": "Accéder à la prière de l'Angélus",
+      "url": "/?section=angelus",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231e3a8a' width='192' height='192' rx='45'/><text x='50%' y='55%' font-size='80' font-family='Arial' fill='white' text-anchor='middle' dominant-baseline='middle'>🙏</text></svg>",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Prière du Soir",
+      "short_name": "Soir",
+      "description": "Accéder à la prière du soir",
+      "url": "/?section=soir",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231e3a8a' width='192' height='192' rx='45'/><text x='50%' y='55%' font-size='80' font-family='Arial' fill='white' text-anchor='middle' dominant-baseline='middle'>🌙</text></svg>",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}
